@@ -1,36 +1,56 @@
+<?php
+$CSS_PATH = "template/index/indexCSS.php";
+$HEADER_PATH = "public/html/header.phtml";
+$FOOTER_PATH = "public/html/footer.phtml";
+$BANNER_PATH = "public/html/banner.phtml";
+?>
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Football Management Website</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
-            rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
-            crossorigin="anonymous">
-        <?php   
-            include($CSS_PATH);
-        ?>
-    </head>
-    <body>
-        <div class="pushDownContent">header</div>
-        <div id="header">
-            <?php include($HEADER_PATH);?>
-        </div>              
-        <div id="banner">
-            <?php include($BANNER_PATH);?>
-        </div>        
-        <div id="wrapper">   
-            <div id="smallbar"></div> 
-            <div id="content">                    
-                <?php include($CONTENT_PATH);?>
-            </div>   
+
+<head>
+    <title>Football Management Website</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <?php include($cssRefPath . $CSS_PATH);?>
+</head>
+
+<body>
+    <div class="pushDownContent">header</div>
+    <div id="header">
+        <?php include($cssRefPath . $HEADER_PATH);?>
+    </div>
+    <div id="banner">
+        <?php include($cssRefPath . $BANNER_PATH);?>
+    </div>
+    <div id="wrapper">
+        <div id="smallbar"></div>
+        <div id="content">
+            <?php include($cssRefPath . $CONTENT_PATH);?>
         </div>
-        <div class="pushUpContent">footer</div>
-        <div id="footer">
-                <?php include($FOOTER_PATH);?>
-        </div>   
-        <!-- Messenger Chat plugin Code -->
+    </div>
+    <div class="pushUpContent">footer</div>
+    <div id="footer">
+        <?php include($cssRefPath . $FOOTER_PATH);?>
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+    crossorigin="anonymous">
+    </script>
+
+
+    {{!-- jquery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <!-- Messenger Chat plugin Code -->
     <div id="fb-root"></div>
 
     <!-- Your Chat plugin code -->
@@ -60,5 +80,5 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    </body>
+</body>
 </html>
